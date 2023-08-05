@@ -1,20 +1,26 @@
 {
     "name": "paulinhoajr/cielo",
-    "description": "API 3.0",
+    "description": "Payment gateway using Cielo",
+    "type": "library",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "paulinhoajr\\Cielo\\": "src/"
+        }
+    },
     "authors": [
         {
             "name": "Paulo Rodrigues",
             "email": "paulinhoajrodrigues@gmail.com"
         }
     ],
-    "prefer-stable": true,
+    "minimum-stability": "dev",
     "require": {
-        "php": ">=7.1"
+      "php": ">=7.1"
     },
     "autoload": {
-        "classmap": [
-            "src/"
-        ]
+      "psr-0": {
+        "Ecommerce": "src/"
+      }
     }
 }
