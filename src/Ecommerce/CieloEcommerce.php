@@ -7,10 +7,6 @@ use App\Cielo\Ecommerce\Request\QuerySaleRequest;
 use App\Cielo\Ecommerce\Request\UpdateSaleRequest;
 use App\Cielo\Ecommerce\Request\QueryRecurrentPaymentRequest;
 
-
-/**
- * The Cielo Ecommerce SDK front-end;
- */
 class CieloEcommerce
 {
 
