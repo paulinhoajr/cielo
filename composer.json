@@ -12,6 +12,10 @@
         {
             "name": "Paulo Rodrigues",
             "email": "paulinhoajrodrigues@gmail.com"
+        },
+        {
+            "name": "Paulo Junior",
+            "email": "pejotinhas@gmail.com"
         }
     ],
     "minimum-stability": "dev",
