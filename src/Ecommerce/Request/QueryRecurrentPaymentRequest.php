@@ -1,5 +1,5 @@
 <?php
-namespace Cielo\API30\Ecommerce\Request;
+namespace App\Cielo\Ecommerce\Request;
 
 use App\Cielo\Ecommerce\Request\AbstractSaleRequest;
 use App\Cielo\Environment;
