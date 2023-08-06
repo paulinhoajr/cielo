@@ -1,6 +1,6 @@
 {
     "name": "paulinhoajr/cielo",
-    "description": "Payment gateway using Cielo",
+    "description": "Modulo de pagamentos API Cielo",
     "type": "library",
     "license": "MIT",
     "autoload": {
