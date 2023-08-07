@@ -1,10 +1,10 @@
 <?php
-namespace App\Cielo\Ecommerce\Request;
+namespace Paulinhoajr\Cielo\Ecommerce\Request;
 
-use App\Cielo\Ecommerce\Request\AbstractSaleRequest;
-use App\Cielo\Environment;
-use App\Cielo\Merchant;
-use App\Cielo\Ecommerce\Sale;
+use Paulinhoajr\Cielo\Ecommerce\Request\AbstractSaleRequest;
+use Paulinhoajr\Cielo\Environment;
+use Paulinhoajr\Cielo\Merchant;
+use Paulinhoajr\Cielo\Ecommerce\Sale;
 
 class QuerySaleRequest extends AbstractSaleRequest
 {
@@ -14,14 +14,14 @@ class QuerySaleRequest extends AbstractSaleRequest
     public function __construct(Merchant $merchant, Environment $environment)
     {
         parent::__construct($merchant);
-        
+
         $this->environment = $environment;
     }
 
     public function execute($paymentId)
     {
         $url = $this->environment->getApiQueryURL() . '1/sales/' . $paymentId;
-        
+
         return $this->sendRequest('GET', $url);
     }
 

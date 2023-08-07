@@ -1,5 +1,5 @@
 <?php
-namespace App\Cielo\Ecommerce;
+namespace Paulinhoajr\Cielo\Ecommerce;
 
 class Sale implements \JsonSerializable
 {
@@ -25,17 +25,17 @@ class Sale implements \JsonSerializable
         $dataProps = get_object_vars($data);
 
 
-        
+
         if (isset($dataProps['Customer'])) {
-            $this->customer = new \App\Cielo\Ecommerce\Customer();
+            $this->customer = new \Paulinhoajr\Cielo\Ecommerce\Customer();
             $this->customer->populate($data->Customer);
         }
-        
+
         if (isset($dataProps['Payment'])) {
-            $this->payment = new \App\Cielo\Ecommerce\Payment();
+            $this->payment = new \Paulinhoajr\Cielo\Ecommerce\Payment();
             $this->payment->populate($data->Payment);
         }
-        
+
         if (isset($dataProps['MerchantOrderId'])) {
             $this->merchantOrderId = $data->MerchantOrderId;
         }
@@ -46,28 +46,28 @@ class Sale implements \JsonSerializable
     public static function fromJson($json)
     {
         $object = json_decode($json);
-        
+
         $sale = new Sale();
         $sale->populate($object);
-        
+
         return $sale;
     }
 
     public function customer($name)
     {
         $customer = new Customer($name);
-        
+
         $this->setCustomer($customer);
-        
+
         return $customer;
     }
 
     public function payment($amount, $installments = 1)
     {
         $payment = new Payment($amount, $installments);
-        
+
         $this->setPayment($payment);
-        
+
         return $payment;
     }
 

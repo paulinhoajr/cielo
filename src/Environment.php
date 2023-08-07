@@ -1,5 +1,5 @@
 <?php
-namespace App\Cielo;
+namespace Paulinhoajr\Cielo;
 
 interface Environment
 {
@@ -9,7 +9,7 @@ interface Environment
      * @return the Api URL
      */
     public function getApiUrl();
-    
+
     /**
      * Gets the environment's Api Query URL
      *

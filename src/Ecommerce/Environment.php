@@ -1,7 +1,7 @@
 <?php
-namespace App\Cielo\Ecommerce;
+namespace Paulinhoajr\Cielo\Ecommerce;
 
-class Environment implements \App\Cielo\Environment
+class Environment implements \Paulinhoajr\Cielo\Environment
 {
     private $api;
 
@@ -17,7 +17,7 @@ class Environment implements \App\Cielo\Environment
     {
         $api = 'https://apisandbox.cieloecommerce.cielo.com.br/';
         $apiQuery = 'https://apiquerysandbox.cieloecommerce.cielo.com.br/';
-        
+
         return new Environment($api, $apiQuery);
     }
 
@@ -25,7 +25,7 @@ class Environment implements \App\Cielo\Environment
     {
         $api = 'https://api.cieloecommerce.cielo.com.br/';
         $apiQuery = 'https://apiquery.cieloecommerce.cielo.com.br/';
-        
+
         return new Environment($api, $apiQuery);
     }
 

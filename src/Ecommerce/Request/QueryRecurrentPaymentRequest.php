@@ -1,10 +1,10 @@
 <?php
-namespace App\Cielo\Ecommerce\Request;
+namespace Paulinhoajr\Cielo\Ecommerce\Request;
 
-use App\Cielo\Ecommerce\Request\AbstractSaleRequest;
-use App\Cielo\Environment;
-use App\Cielo\Merchant;
-use App\Cielo\Ecommerce\RecurrentPayment;
+use Paulinhoajr\Cielo\Ecommerce\Request\AbstractSaleRequest;
+use Paulinhoajr\Cielo\Environment;
+use Paulinhoajr\Cielo\Merchant;
+use Paulinhoajr\Cielo\Ecommerce\RecurrentPayment;
 
 class QueryRecurrentPaymentRequest extends AbstractSaleRequest
 {

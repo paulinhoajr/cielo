@@ -1,5 +1,5 @@
 <?php
-namespace App\Cielo\Ecommerce;
+namespace Paulinhoajr\Cielo\Ecommerce;
 
 class RecurrentPayment implements \JsonSerializable
 {

@@ -1,5 +1,5 @@
 <?php
-namespace App\Cielo\Ecommerce\Request;
+namespace Paulinhoajr\Cielo\Ecommerce\Request;
 
 class CieloError
 {

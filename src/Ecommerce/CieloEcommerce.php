@@ -1,11 +1,11 @@
 <?php
-namespace App\Cielo\Ecommerce;
+namespace Paulinhoajr\Cielo\Ecommerce;
 
-use App\Cielo\Merchant;
-use App\Cielo\Ecommerce\Request\CreateSaleRequest;
-use App\Cielo\Ecommerce\Request\QuerySaleRequest;
-use App\Cielo\Ecommerce\Request\UpdateSaleRequest;
-use App\Cielo\Ecommerce\Request\QueryRecurrentPaymentRequest;
+use Paulinhoajr\Cielo\Merchant;
+use Paulinhoajr\Cielo\Ecommerce\Request\CreateSaleRequest;
+use Paulinhoajr\Cielo\Ecommerce\Request\QuerySaleRequest;
+use Paulinhoajr\Cielo\Ecommerce\Request\UpdateSaleRequest;
+use Paulinhoajr\Cielo\Ecommerce\Request\QueryRecurrentPaymentRequest;
 
 class CieloEcommerce
 {

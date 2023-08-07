@@ -1,5 +1,5 @@
 <?php
-namespace App\Cielo\Ecommerce;
+namespace Paulinhoajr\Cielo\Ecommerce;
 
 class Customer implements \JsonSerializable
 {
@@ -33,15 +33,15 @@ class Customer implements \JsonSerializable
         $this->name = isset($data->Name) ? $data->Name : null;
         $this->email = isset($data->Email) ? $data->Email : null;
         $this->birthDate = isset($data->Birthdate) ? $data->Birthdate : null;
-        
+
         $this->identity = isset($data->Identity) ? $data->Identity : null;
         $this->identityType = isset($data->IdentityType) ? $data->IdentityType : null;
-        
+
         if (isset($data->Address)) {
             $this->address = new Address();
             $this->address->populate($data->Address);
         }
-        
+
         if (isset($data->DeliveryAddress)) {
             $this->deliveryAddress = new Address();
             $this->deliveryAddress->populate($data->DeliveryAddress);
@@ -51,18 +51,18 @@ class Customer implements \JsonSerializable
     public function address()
     {
         $address = new Address();
-        
+
         $this->setAddress($address);
-        
+
         return $address;
     }
 
     public function deliveryAddress()
     {
         $address = new Address();
-        
+
         $this->setDeliveryAddress($address);
-        
+
         return $address;
     }
 

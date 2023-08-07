@@ -1,8 +1,8 @@
 <?php
-namespace App\Cielo\Ecommerce\Request;
+namespace Paulinhoajr\Cielo\Ecommerce\Request;
 
-use App\Cielo\Merchant;
-use App\Cielo\Ecommerce\Sale;
+use Paulinhoajr\Cielo\Merchant;
+use Paulinhoajr\Cielo\Ecommerce\Sale;
 
 abstract class AbstractSaleRequest
 {
@@ -28,7 +28,7 @@ abstract class AbstractSaleRequest
             'MerchantKey: ' . $this->merchant->getKey(),
             'RequestId: ' . uniqid()
         ];
-        
+
         $curl = curl_init($url);
 
         @$CURL_SSLVERSION_TLSv1_2 = CURL_SSLVERSION_TLSv1_2;
@@ -48,7 +48,7 @@ abstract class AbstractSaleRequest
 
         if ($sale !== null) {
             curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($sale));
-            
+
             $headers[] = 'Content-Type: application/json';
         } else {
             $headers[] = 'Content-Length: 0';
@@ -56,14 +56,14 @@ abstract class AbstractSaleRequest
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-        
+
         $response = curl_exec($curl);
         $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        
+
         if (curl_errno($curl)) {
             throw new \RuntimeException('Curl error: ' . curl_error($curl));
         }
-        
+
         curl_close($curl);
 
         return $this->readResponse($statusCode, $response);
@@ -73,7 +73,7 @@ abstract class AbstractSaleRequest
     protected function readResponse($statusCode, $responseBody)
     {
         $unserialized = null;
-        
+
         switch ($statusCode) {
             case 200:
             case 201:
@@ -82,13 +82,13 @@ abstract class AbstractSaleRequest
             case 400:
                 $exception = null;
                 $response = json_decode($responseBody);
-                
+
                 foreach ($response as $error) {
                     $cieloError = new CieloError($error->Message, $error->Code);
                     $exception = new CieloRequestException('Request Error', $statusCode, $exception);
                     $exception->setCieloError($cieloError);
                 }
-                
+
                 throw $exception;
             case 404:
                 throw new CieloRequestException('Resource not found', 404, null);

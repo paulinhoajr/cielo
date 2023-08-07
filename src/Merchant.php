@@ -1,17 +1,17 @@
 <?php
-namespace App\Cielo;
+namespace Paulinhoajr\Cielo;
 
 class Merchant
 {
     private $id;
     private $key;
-    
+
     public function __construct($id, $key)
     {
         $this->id = $id;
         $this->key = $key;
     }
-    
+
     /**
      * Gets the merchant identification number
      *
@@ -21,7 +21,7 @@ class Merchant
     {
         return $this->id;
     }
-    
+
     /**
      * Gets the merchant identification key
      *
