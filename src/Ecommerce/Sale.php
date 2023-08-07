@@ -3,7 +3,6 @@ namespace Paulinhoajr\Cielo\Ecommerce;
 
 class Sale implements \JsonSerializable
 {
-
     private $merchantOrderId;
 
     private $customer;
